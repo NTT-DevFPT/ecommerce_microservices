@@ -3,8 +3,9 @@
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { MagnifyingGlassIcon, ShoppingCartIcon, UserIcon, MapPinIcon, ChevronDownIcon, DevicePhoneMobileIcon, ComputerDesktopIcon, TableCellsIcon } from '@heroicons/react/24/outline'
-import {useEffect, useState} from "react";
+import { MagnifyingGlassIcon, ShoppingCartIcon, UserIcon, MapPinIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
+import { Smartphone, Laptop, Headphones, Watch, Clock, Tablet, Monitor, Home, Shirt } from 'lucide-react'
+import { useEffect, useState } from "react"
 
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
@@ -86,22 +87,21 @@ export function Header() {
             <nav className="overflow-x-auto">
                 <div className="w-full max-w-[1400px] mx-auto px-4 lg:px-10 xl:px-20">
                     <ul className="flex items-center gap-6 text-sm py-1 w-full">
-                        <NavItem icon={<DevicePhoneMobileIcon className="h-5 w-5" />} label="Điện thoại" />
-                        <NavItem icon={<ComputerDesktopIcon className="h-5 w-5" />} label="Laptop" />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="Phụ kiện" showChevron />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="Smartwatch" />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="Đồng hồ" />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="Tablet" />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="PC, Máy chiếu" showChevron />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="Nhà thông minh" showChevron />
-                        <NavItem icon={<TableCellsIcon className="h-5 w-5" />} label="Thể thao, thời trang" showChevron />
+                        <NavItem icon={<Smartphone className="h-5 w-5" />} label="Điện thoại" />
+                        <NavItem icon={<Laptop className="h-5 w-5" />} label="Laptop" />
+                        <NavItem icon={<Headphones className="h-5 w-5" />} label="Phụ kiện" showChevron />
+                        <NavItem icon={<Watch className="h-5 w-5" />} label="Smartwatch" />
+                        <NavItem icon={<Clock className="h-5 w-5" />} label="Đồng hồ" />
+                        <NavItem icon={<Tablet className="h-5 w-5" />} label="Tablet" />
+                        <NavItem icon={<Monitor className="h-5 w-5" />} label="PC, Máy chiếu" showChevron />
+                        <NavItem icon={<Home className="h-5 w-5" />} label="Nhà thông minh" showChevron />
+                        <NavItem icon={<Shirt className="h-5 w-5" />} label="Thể thao, thời trang" showChevron />
                     </ul>
                 </div>
             </nav>
         </header>
     );
 }
-
 
 interface NavItemProps {
     icon: React.ReactNode
@@ -123,3 +123,4 @@ function NavItem({ icon, label, showChevron }: NavItemProps) {
         </li>
     );
 }
+
