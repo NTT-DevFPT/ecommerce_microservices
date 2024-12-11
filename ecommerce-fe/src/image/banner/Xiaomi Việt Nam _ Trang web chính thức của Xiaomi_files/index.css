@@ -1,0 +1,464 @@
+@supports not (font-variation-settings: normal) {
+  /* greek-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/0.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/1.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/2.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/3.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/4.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/5.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/6.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* other */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/light/7.woff2?v=lwrpi0ag') format('woff2');
+    unicode-range: U+251, U+253, U+257, U+261, U+292, U+2B0, U+2B2, U+2B3, U+2B7, U+2B8, U+2C7, U+2C9-2CB, U+2D8, U+2D9, U+2DB, U+2DD, U+2E1-2E3, U+300-304, U+306-30C, U+312, U+323, U+326-328, U+E3F, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F, U+1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+2070, U+2071, U+2075-207B, U+207F-2089, U+2103, U+2105, U+2109, U+2114, U+2117, U+211E, U+2120, U+2121, U+2126, U+212E, U+2153, U+2154, U+215B-215E, U+2160-2179, U+2180-2182, U+2190, U+2192, U+2196-2199, U+21C4, U+2202, U+2206, U+2208, U+220F, U+2211, U+221A, U+221D-2220, U+2223, U+2225, U+2227-222B, U+222E, U+2234-2237, U+223C, U+223D, U+2248, U+224C, U+2252, U+2260, U+2261, U+2264-2267, U+226E, U+226F, U+2295, U+2299, U+22A5, U+22BF, U+2312, U+2460-2469, U+2474-249B, U+2500-254B, U+2550-2573, U+2581-258F, U+2593-2595, U+25A0, U+25A1, U+25B2, U+25B3, U+25BC, U+25BD, U+25C6, U+25C7, U+25CA, U+25CB, U+25CE, U+25CF, U+25E2-25E5, U+2605, U+2606, U+2609, U+2640, U+2642, U+2713, U+2715, U+275B-275E, U+2780-2793, U+3000, U+3003, U+3007, U+3012, U+3013, U+301D, U+301E, U+FE49-FE4F;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/0.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/1.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/2.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/3.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/4.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/5.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/6.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* other */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/regular/7.woff2?v=lwrpi0ee') format('woff2');
+    unicode-range: U+251, U+253, U+257, U+261, U+292, U+2B0, U+2B2, U+2B3, U+2B7, U+2B8, U+2C7, U+2C9-2CB, U+2D8, U+2D9, U+2DB, U+2DD, U+2E1-2E3, U+300-304, U+306-30C, U+312, U+323, U+326-328, U+E3F, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F, U+1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+2070, U+2071, U+2075-207B, U+207F-2089, U+2103, U+2105, U+2109, U+2114, U+2117, U+211E, U+2120, U+2121, U+2126, U+212E, U+2153, U+2154, U+215B-215E, U+2160-2179, U+2180-2182, U+2190, U+2192, U+2196-2199, U+21C4, U+2202, U+2206, U+2208, U+220F, U+2211, U+221A, U+221D-2220, U+2223, U+2225, U+2227-222B, U+222E, U+2234-2237, U+223C, U+223D, U+2248, U+224C, U+2252, U+2260, U+2261, U+2264-2267, U+226E, U+226F, U+2295, U+2299, U+22A5, U+22BF, U+2312, U+2460-2469, U+2474-249B, U+2500-254B, U+2550-2573, U+2581-258F, U+2593-2595, U+25A0, U+25A1, U+25B2, U+25B3, U+25BC, U+25BD, U+25C6, U+25C7, U+25CA, U+25CB, U+25CE, U+25CF, U+25E2-25E5, U+2605, U+2606, U+2609, U+2640, U+2642, U+2713, U+2715, U+275B-275E, U+2780-2793, U+3000, U+3003, U+3007, U+3012, U+3013, U+301D, U+301E, U+FE49-FE4F;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/0.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/1.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/2.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/3.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/4.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/5.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/6.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* other */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/medium/7.woff2?v=lwrpi0i5') format('woff2');
+    unicode-range: U+251, U+253, U+257, U+261, U+292, U+2B0, U+2B2, U+2B3, U+2B7, U+2B8, U+2C7, U+2C9-2CB, U+2D8, U+2D9, U+2DB, U+2DD, U+2E1-2E3, U+300-304, U+306-30C, U+312, U+323, U+326-328, U+E3F, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F, U+1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+2070, U+2071, U+2075-207B, U+207F-2089, U+2103, U+2105, U+2109, U+2114, U+2117, U+211E, U+2120, U+2121, U+2126, U+212E, U+2153, U+2154, U+215B-215E, U+2160-2179, U+2180-2182, U+2190, U+2192, U+2196-2199, U+21C4, U+2202, U+2206, U+2208, U+220F, U+2211, U+221A, U+221D-2220, U+2223, U+2225, U+2227-222B, U+222E, U+2234-2237, U+223C, U+223D, U+2248, U+224C, U+2252, U+2260, U+2261, U+2264-2267, U+226E, U+226F, U+2295, U+2299, U+22A5, U+22BF, U+2312, U+2460-2469, U+2474-249B, U+2500-254B, U+2550-2573, U+2581-258F, U+2593-2595, U+25A0, U+25A1, U+25B2, U+25B3, U+25BC, U+25BD, U+25C6, U+25C7, U+25CA, U+25CB, U+25CE, U+25CF, U+25E2-25E5, U+2605, U+2606, U+2609, U+2640, U+2642, U+2713, U+2715, U+275B-275E, U+2780-2793, U+3000, U+3003, U+3007, U+3012, U+3013, U+301D, U+301E, U+FE49-FE4F;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/0.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/1.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/2.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/3.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/4.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/5.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/6.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* other */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/bold/7.woff2?v=lwrpi0ly') format('woff2');
+    unicode-range: U+251, U+253, U+257, U+261, U+292, U+2B0, U+2B2, U+2B3, U+2B7, U+2B8, U+2C7, U+2C9-2CB, U+2D8, U+2D9, U+2DB, U+2DD, U+2E1-2E3, U+300-304, U+306-30C, U+312, U+323, U+326-328, U+E3F, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F, U+1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+2070, U+2071, U+2075-207B, U+207F-2089, U+2103, U+2105, U+2109, U+2114, U+2117, U+211E, U+2120, U+2121, U+2126, U+212E, U+2153, U+2154, U+215B-215E, U+2160-2179, U+2180-2182, U+2190, U+2192, U+2196-2199, U+21C4, U+2202, U+2206, U+2208, U+220F, U+2211, U+221A, U+221D-2220, U+2223, U+2225, U+2227-222B, U+222E, U+2234-2237, U+223C, U+223D, U+2248, U+224C, U+2252, U+2260, U+2261, U+2264-2267, U+226E, U+226F, U+2295, U+2299, U+22A5, U+22BF, U+2312, U+2460-2469, U+2474-249B, U+2500-254B, U+2550-2573, U+2581-258F, U+2593-2595, U+25A0, U+25A1, U+25B2, U+25B3, U+25BC, U+25BD, U+25C6, U+25C7, U+25CA, U+25CB, U+25CE, U+25CF, U+25E2-25E5, U+2605, U+2606, U+2609, U+2640, U+2642, U+2713, U+2715, U+275B-275E, U+2780-2793, U+3000, U+3003, U+3007, U+3012, U+3013, U+301D, U+301E, U+FE49-FE4F;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/0.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/1.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/2.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/3.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/4.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/5.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/6.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* other */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/woff2/black/7.woff2?v=lwrpi0pm') format('woff2');
+    unicode-range: U+251, U+253, U+257, U+261, U+292, U+2B0, U+2B2, U+2B3, U+2B7, U+2B8, U+2C7, U+2C9-2CB, U+2D8, U+2D9, U+2DB, U+2DD, U+2E1-2E3, U+300-304, U+306-30C, U+312, U+323, U+326-328, U+E3F, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F, U+1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+2070, U+2071, U+2075-207B, U+207F-2089, U+2103, U+2105, U+2109, U+2114, U+2117, U+211E, U+2120, U+2121, U+2126, U+212E, U+2153, U+2154, U+215B-215E, U+2160-2179, U+2180-2182, U+2190, U+2192, U+2196-2199, U+21C4, U+2202, U+2206, U+2208, U+220F, U+2211, U+221A, U+221D-2220, U+2223, U+2225, U+2227-222B, U+222E, U+2234-2237, U+223C, U+223D, U+2248, U+224C, U+2252, U+2260, U+2261, U+2264-2267, U+226E, U+226F, U+2295, U+2299, U+22A5, U+22BF, U+2312, U+2460-2469, U+2474-249B, U+2500-254B, U+2550-2573, U+2581-258F, U+2593-2595, U+25A0, U+25A1, U+25B2, U+25B3, U+25BC, U+25BD, U+25C6, U+25C7, U+25CA, U+25CB, U+25CE, U+25CF, U+25E2-25E5, U+2605, U+2606, U+2609, U+2640, U+2642, U+2713, U+2715, U+275B-275E, U+2780-2793, U+3000, U+3003, U+3007, U+3012, U+3013, U+301D, U+301E, U+FE49-FE4F;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  /* greek-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/0.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/1.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/2.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/3.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/4.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/5.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/6.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* other */
+  @font-face {
+    font-family: 'MiSans Latin';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/MiSansLatin/vf/7.woff2?v=lwrpi0tp') format('woff2');
+    unicode-range: U+251, U+253, U+257, U+261, U+292, U+2B0, U+2B2, U+2B3, U+2B7, U+2B8, U+2C7, U+2C9-2CB, U+2D8, U+2D9, U+2DB, U+2DD, U+2E1-2E3, U+300-304, U+306-30C, U+312, U+323, U+326-328, U+E3F, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F, U+1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+2070, U+2071, U+2075-207B, U+207F-2089, U+2103, U+2105, U+2109, U+2114, U+2117, U+211E, U+2120, U+2121, U+2126, U+212E, U+2153, U+2154, U+215B-215E, U+2160-2179, U+2180-2182, U+2190, U+2192, U+2196-2199, U+21C4, U+2202, U+2206, U+2208, U+220F, U+2211, U+221A, U+221D-2220, U+2223, U+2225, U+2227-222B, U+222E, U+2234-2237, U+223C, U+223D, U+2248, U+224C, U+2252, U+2260, U+2261, U+2264-2267, U+226E, U+226F, U+2295, U+2299, U+22A5, U+22BF, U+2312, U+2460-2469, U+2474-249B, U+2500-254B, U+2550-2573, U+2581-258F, U+2593-2595, U+25A0, U+25A1, U+25B2, U+25B3, U+25BC, U+25BD, U+25C6, U+25C7, U+25CA, U+25CB, U+25CE, U+25CF, U+25E2-25E5, U+2605, U+2606, U+2609, U+2640, U+2642, U+2713, U+2715, U+275B-275E, U+2780-2793, U+3000, U+3003, U+3007, U+3012, U+3013, U+301D, U+301E, U+FE49-FE4F;
+  }
+}
+
+body {
+  font-family: 'MiSans Latin', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: 'Xiaomi Brand';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://i02.appmifile.com/i18n/fonts/Brand/Brand.woff2') format('woff2');
+  }
+
+  body .mi-brand {
+    font-family: 'Xiaomi Brand', 'MiSans Latin', sans-serif;
+  }
+
+  body .mi-brand.mi-brand--xiaomi,
+  body .mi-brand.mi-brand--poco {
+    font-weight: bold !important;
+  }
+
+  body .mi-brand.mi-brand--redmi {
+    font-weight: normal !important;
+  }
+}

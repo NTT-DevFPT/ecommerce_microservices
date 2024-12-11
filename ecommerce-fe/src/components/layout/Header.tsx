@@ -85,8 +85,8 @@ export function Header() {
 
             {/* Navigation */}
             <nav className="overflow-x-auto">
-                <div className="w-full max-w-[1400px] mx-auto px-4 lg:px-10 xl:px-20">
-                    <ul className="flex items-center gap-6 text-sm py-1 w-full">
+                <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-10 xl:px-20">
+                    <ul className="flex items-center gap-0.5 text-sm py-1 w-full">
                         <NavItem icon={<Smartphone className="h-5 w-5" />} label="Điện thoại" />
                         <NavItem icon={<Laptop className="h-5 w-5" />} label="Laptop" />
                         <NavItem icon={<Headphones className="h-5 w-5" />} label="Phụ kiện" showChevron />
