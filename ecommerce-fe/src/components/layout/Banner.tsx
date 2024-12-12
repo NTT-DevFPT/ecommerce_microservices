@@ -105,7 +105,7 @@ export default function Banner() {
                         <h1
                             className={`text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl 
                                 ${slide.id === 1 || slide.id === 2 ? "text-black" : "text-white"} 
-                                ${slide.id === 3 ? "text-center pl-[200px]" : ""}
+                                ${slide.id === 3 ? "text-center pl-[210px]" : ""}
                                 ${slide.id === 1 ? "pl-[100px]" : slide.id === 2 ? "pl-[80px]" : "pl-[60px]"}`}
                         >
                             {slide.title}
@@ -114,7 +114,7 @@ export default function Banner() {
                         <h2
                             className={`text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl 
                                 ${slide.id === 1 || slide.id === 2 ? "text-black" : "text-white"} 
-                                ${slide.id === 3 ? "text-center pl-[170px] text-2xl" : ""}
+                                ${slide.id === 3 ? "text-center pl-[180px] text-2xl" : ""}
                                 ${slide.id === 1 ? "pl-[100px]" : slide.id === 2 ? "pl-[80px]" : "pl-[60px]"}`}
                         >
                             {slide.subtitle}
@@ -123,7 +123,7 @@ export default function Banner() {
                         <p
                             className={`w-full max-w-[6000px] md:text-lg whitespace-normal 
                                 ${slide.id === 1 || slide.id === 2 ? "text-black/80" : "text-white/80"} 
-                                ${slide.id === 3 ? "text-center pl-[230px]" : ""}
+                                ${slide.id === 3 ? "text-center pl-[235px]" : ""}
                                 ${slide.id === 1 ? "pl-[100px]" : slide.id === 2 ? "pl-[80px]" : "pl-[60px]"} 
                                 break-words`}
                         >

@@ -6,9 +6,12 @@ import { Button } from "@/components/ui/button"
 import { MagnifyingGlassIcon, ShoppingCartIcon, UserIcon, MapPinIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { Smartphone, Laptop, Headphones, Watch, Clock, Tablet, Monitor, Home, Shirt } from 'lucide-react'
 import { useEffect, useState } from "react"
+import { AddressDialog } from "@/components/address-dialog"
 
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
+    const [addressDialogOpen, setAddressDialogOpen] = useState(false);
+    const [currentAddress, setCurrentAddress] = useState("123 Đường ABC, Phường XYZ, TP.HCM");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -74,11 +77,12 @@ export function Header() {
 
                     <Button
                         variant="ghost"
-                        className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
+                        className="h-12 text-white hover:bg-[#f0932b] text-sm w-auto min-w-[200px] max-w-[300px] truncate"
+                        onClick={() => setAddressDialogOpen(true)}
                     >
-                        <MapPinIcon className="mr-2 h-5 w-5" />
-                        <span className="hidden sm:inline">123 Đường ABC, Phường XYZ, TP.HCM</span>
-                        <ChevronDownIcon className="ml-1 h-5 w-5" />
+                        <MapPinIcon className="mr-2 h-5 w-5 flex-shrink-0"/>
+                        <span className="truncate">{currentAddress}</span>
+                        <ChevronDownIcon className="ml-1 h-5 w-5 flex-shrink-0"/>
                     </Button>
                 </div>
             </div>
@@ -99,6 +103,13 @@ export function Header() {
                     </ul>
                 </div>
             </nav>
+
+            <AddressDialog
+                open={addressDialogOpen}
+                onOpenChange={setAddressDialogOpen}
+                currentAddress={currentAddress}
+                onAddressChange={setCurrentAddress}
+            />
         </header>
     );
 }
