@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 import { Search } from 'lucide-react'
+import {API_URLS} from "@/lib/map";
 
 interface AddressDialogProps {
     open: boolean
@@ -35,29 +36,29 @@ export function AddressDialog({ open, onOpenChange, currentAddress, onAddressCha
     const [addressComplete, setAddressComplete] = useState(false);
 
     useEffect(() => {
-        fetch('https://provinces.open-api.vn/api/?depth=1')
+        fetch(API_URLS.PROVINCES)
             .then(response => response.json())
             .then(data => setProvinces(data))
-            .catch(error => console.error('Error fetching provinces:', error))
-    }, [])
+            .catch(error => console.error('Error fetching provinces:', error));
+    }, []);
 
     useEffect(() => {
         if (selectedProvince) {
-            fetch(`https://provinces.open-api.vn/api/p/${selectedProvince.code}?depth=2`)
+            fetch(API_URLS.DISTRICTS(selectedProvince.code))
                 .then(response => response.json())
                 .then(data => setDistricts(data.districts))
-                .catch(error => console.error('Error fetching districts:', error))
+                .catch(error => console.error('Error fetching districts:', error));
         }
-    }, [selectedProvince])
+    }, [selectedProvince]);
 
     useEffect(() => {
         if (selectedDistrict) {
-            fetch(`https://provinces.open-api.vn/api/d/${selectedDistrict.code}?depth=2`)
+            fetch(API_URLS.WARDS(selectedDistrict.code))
                 .then(response => response.json())
                 .then(data => setWards(data.wards))
-                .catch(error => console.error('Error fetching wards:', error))
+                .catch(error => console.error('Error fetching wards:', error));
         }
-    }, [selectedDistrict])
+    }, [selectedDistrict]);
 
     useEffect(() => {
         if (open) {
@@ -123,7 +124,10 @@ export function AddressDialog({ open, onOpenChange, currentAddress, onAddressCha
                 {!addressComplete && (
                     <div className="px-6 flex-grow flex flex-col">
                         <div className="relative">
-                            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" aria-hidden="true" />
+                            <Search
+                                className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500"
+                                    aria-hidden="true"
+                            />
                             <Input
                                 placeholder="Tìm nhanh tỉnh thành, quận huyện, phường xã"
                                 className="pl-9 bg-white text-black border-gray-300"
@@ -132,6 +136,7 @@ export function AddressDialog({ open, onOpenChange, currentAddress, onAddressCha
                                 aria-label="Tìm kiếm địa chỉ"
                             />
                         </div>
+
                         <div className="grid grid-cols-3 mt-2" role="tablist">
                             <TabButton
                                 active={activeTab === 'province'}
