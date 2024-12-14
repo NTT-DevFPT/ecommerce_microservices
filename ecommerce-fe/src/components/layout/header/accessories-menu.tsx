@@ -1,9 +1,29 @@
 import Link from 'next/link'
-import { cn } from "@/lib/utils"
+import {
+    Battery0Icon,
+    BriefcaseIcon,
+    CameraIcon,
+    TruckIcon,
+    DocumentTextIcon,
+    CircleStackIcon,
+    SpeakerWaveIcon,
+    MicrophoneIcon,
+    CursorArrowRaysIcon,
+    PencilIcon,
+    PowerIcon,
+    ServerIcon,
+    DevicePhoneMobileIcon,
+    DeviceTabletIcon,
+    TagIcon,
+    SquaresPlusIcon,
+    UsersIcon,
+    ClockIcon,
+    ComputerDesktopIcon,
+} from '@heroicons/react/24/outline'
 
 interface AccessoryItem {
     name: string
-    icon: string
+    icon: React.ReactNode
     href: string
 }
 
@@ -15,102 +35,125 @@ interface AccessoryCategory {
 const mobileAccessories: AccessoryCategory = {
     title: "Phụ kiện di động",
     items: [
-        { name: "Sạc dự phòng", icon: "🔋", href: "#" },
-        { name: "Sạc, cáp", icon: "🔌", href: "#" },
-        { name: "Ốp lưng điện thoại", icon: "📱", href: "#" },
-        { name: "Ốp lưng máy tính bảng", icon: "💻", href: "#" },
-        { name: "Miếng dán", icon: "🔳", href: "#" },
-        { name: "Miếng dán Camera", icon: "📷", href: "#" },
-        { name: "Tai nghe Bluetooth", icon: "🎧", href: "#" },
-        { name: "Tai nghe dây", icon: "🎧", href: "#" },
-        { name: "Tai nghe chụp tai", icon: "🎧", href: "#" },
-        { name: "Tai nghe thể thao", icon: "🏃", href: "#" },
-        { name: "Loa", icon: "🔊", href: "#" },
-        { name: "Micro", icon: "🎙️", href: "#" },
-    ]
-}
+        {name: "Sạc dự phòng", icon: <Battery0Icon className="w-6 h-6"/>, href: "#"},
+        {name: "Sạc, cáp", icon: <PowerIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Ốp lưng điện thoại", icon: <DevicePhoneMobileIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Ốp lưng máy tính bảng", icon: <DeviceTabletIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Miếng dán", icon: <SquaresPlusIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Miếng dán Camera", icon: <CameraIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Bút tablet", icon: <PencilIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Dây đồng hồ", icon: <ClockIcon className="w-6 h-6"/>, href: "#"},
 
-const smartHomeAccessories: AccessoryCategory = {
-    title: "Thiết bị nhà thông minh",
-    items: [
-        { name: "Camera trong nhà", icon: "🏠", href: "#" },
-        { name: "Camera ngoài trời", icon: "🌳", href: "#" },
     ]
 }
 
 const laptopAccessories: AccessoryCategory = {
     title: "Phụ kiện laptop",
     items: [
-        { name: "Hub, cáp chuyển đổi", icon: "🔌", href: "#" },
-        { name: "Chuột máy tính", icon: "🖱️", href: "#" },
-        { name: "Bàn phím", icon: "⌨️", href: "#" },
-        { name: "Router - Thiết bị mạng", icon: "📡", href: "#" },
-        { name: "Balo, túi chống sốc", icon: "🎒", href: "#" },
+        {name: "Hub, cáp chuyển đổi", icon: <PowerIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Chuột máy tính", icon: <CursorArrowRaysIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Bàn phím", icon: <ComputerDesktopIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Router - Thiết bị mạng", icon: <ServerIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Balo, túi chống sốc", icon: <BriefcaseIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Phần mềm", icon: <DocumentTextIcon className="w-6 h-6"/>, href: "#"},
     ]
 }
 
-const brands = [
-    { name: "Apple", logo: "🍎", href: "#" },
-    { name: "Samsung", logo: "🌟", href: "#" },
-    { name: "Imou", logo: "📹", href: "#" },
-    { name: "Baseus", logo: "🔋", href: "#" },
-    { name: "JBL", logo: "🎵", href: "#" },
-    { name: "Anker", logo: "⚡", href: "#" },
-    { name: "Xmobile", logo: "📱", href: "#" },
-]
+const audioDevices: AccessoryCategory = {
+    title: "Thiết bị âm thanh",
+    items: [
+        {name: "Tai nghe Bluetooth", icon: <SpeakerWaveIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Tai nghe dây", icon: <SpeakerWaveIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Tai nghe chụp tai", icon: <SpeakerWaveIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Tai nghe thể thao", icon: <UsersIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Loa", icon: <SpeakerWaveIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Micro", icon: <MicrophoneIcon className="w-6 h-6"/>, href: "#"},
+    ]
+}
+
+const storageDevices: AccessoryCategory = {
+    title: "Thiết bị lưu trữ",
+    items: [
+        {name: "Ổ cứng di động", icon: <CircleStackIcon className="w-6 h-6"/>, href: "#"},
+        {name: "Thẻ nhớ", icon: <CircleStackIcon className="w-6 h-6"/>, href: "#"},
+        {name: "USB", icon: <CircleStackIcon className="w-6 h-6"/>, href: "#"},
+    ]
+}
+
+const otherAccessories: AccessoryCategory = {
+    title: "Phụ kiện khác",
+    items: [
+        {name: "Pin tiểu", icon: <Battery0Icon className="w-6 h-6"/>, href: "#"},
+        {name: "Phụ kiện ô tô", icon: <TruckIcon className="w-6 h-6"/>, href: "#"},
+    ]
+}
 
 export function AccessoriesMenu() {
+
     return (
-        <div className="absolute left-0 w-screen bg-white shadow-lg border-t mt-1 z-50">
-            <div className="w-[700px] mx-auto p-4 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
-                {/* Mobile Accessories */}
-                <div className="mb-6">
-                    <h3 className="text-sm font-medium text-gray-900 mb-3">{mobileAccessories.title}</h3>
-                    <div className="grid grid-cols-6 gap-4">
-                        {mobileAccessories.items.map((item) => (
-                            <AccessoryItem key={item.name} item={item} />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Smart Home Accessories */}
-                <div className="mb-6">
-                    <h3 className="text-sm font-medium text-gray-900 mb-3">{smartHomeAccessories.title}</h3>
-                    <div className="grid grid-cols-6 gap-4">
-                        {smartHomeAccessories.items.map((item) => (
-                            <AccessoryItem key={item.name} item={item} />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Laptop Accessories */}
-                <div className="mb-6">
-                    <h3 className="text-sm font-medium text-gray-900 mb-3">{laptopAccessories.title}</h3>
-                    <div className="grid grid-cols-6 gap-4">
-                        {laptopAccessories.items.map((item) => (
-                            <AccessoryItem key={item.name} item={item} />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Brands */}
-                <div>
-                    <h3 className="text-sm font-medium text-gray-900 mb-3">Thương hiệu hàng đầu</h3>
-                    <div className="grid grid-cols-7 gap-4">
-                        {brands.map((brand) => (
-                            <Link
-                                key={brand.name}
-                                href={brand.href}
-                                className="flex flex-col items-center group"
-                            >
-                                <div className="w-10 h-10 mb-2 flex items-center justify-center text-2xl">
-                                    {brand.logo}
+        <div
+            className="absolute left-1/2 transform -translate-x-1/2 w-[1100px] bg-white shadow-lg border rounded-lg mt-1 z-50">
+            <div
+                className="h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+                <div className="p-8">
+                    <div className="grid grid-cols-2 gap-12">
+                        {/* Left Column */}
+                        <div className="space-y-8">
+                            {/* Mobile Accessories */}
+                            <div>
+                                <h3 className="text-base font-bold text-gray-900 mb-6">{mobileAccessories.title}</h3>
+                                <div className="grid grid-cols-4 gap-6">
+                                    {mobileAccessories.items.map((item) => (
+                                        <AccessoryItem key={item.name} item={item}/>
+                                    ))}
                                 </div>
-                                <span className="text-xs text-gray-600 text-center group-hover:text-blue-600">
-                                    {brand.name}
-                                </span>
-                            </Link>
-                        ))}
+                            </div>
+
+                            {/* Storage Devices */}
+                            <div>
+                                <h3 className="text-base font-bold text-gray-900 mb-6">{storageDevices.title}</h3>
+                                <div className="grid grid-cols-4 gap-6">
+                                    {storageDevices.items.map((item) => (
+                                        <AccessoryItem key={item.name} item={item}/>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Other Accessories */}
+                            <div>
+                                <h3 className="text-base font-bold text-gray-900 mb-6">{otherAccessories.title}</h3>
+                                <div className="grid grid-cols-4 gap-6">
+                                    {otherAccessories.items.map((item) => (
+                                        <AccessoryItem key={item.name} item={item}/>
+                                    ))}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* Right Column */}
+                        <div className="space-y-8">
+                            {/* Laptop Accessories */}
+                            <div>
+                                <h3 className="text-base font-bold text-gray-900 mb-6">{laptopAccessories.title}</h3>
+                                <div className="grid grid-cols-4 gap-6">
+                                    {laptopAccessories.items.map((item) => (
+                                        <AccessoryItem key={item.name} item={item}/>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Audio Devices */}
+                            <div>
+                                <h3 className="text-base font-bold text-gray-900 mb-6">{audioDevices.title}</h3>
+                                <div className="grid grid-cols-4 gap-6">
+                                    {audioDevices.items.map((item) => (
+                                        <AccessoryItem key={item.name} item={item}/>
+                                    ))}
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,18 +161,19 @@ export function AccessoriesMenu() {
     )
 }
 
-function AccessoryItem({ item }: { item: AccessoryItem }) {
+function AccessoryItem({item}: { item: AccessoryItem }) {
     return (
         <Link
             href={item.href}
             className="flex flex-col items-center group"
         >
-            <div className="w-10 h-10 mb-2 flex items-center justify-center text-2xl">
+            <div
+                className="w-14 h-14 mb-2 p-1 flex items-center justify-center text-gray-600 group-hover:text-black">
                 {item.icon}
             </div>
-            <span className="text-xs text-gray-600 text-center group-hover:text-blue-600">
-        {item.name}
-      </span>
+            <span className="text-xs text-gray-600 text-center group-hover:text-black">
+                {item.name}
+            </span>
         </Link>
     )
 }
