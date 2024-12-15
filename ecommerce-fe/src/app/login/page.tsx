@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Facebook, Chrome } from 'lucide-react'
+import { X } from 'lucide-react'
 
 export default function LoginPage() {
     const [phone, setPhone] = useState('')
@@ -27,7 +26,15 @@ export default function LoginPage() {
 
     return (
         <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-r from-blue-500 to-teal-500 animate-gradientBackground">
-            <div className="w-full max-w-md">
+            <div className="w-full max-w-md relative">
+
+                <Link
+                    href="/"
+                    className="absolute top-1 right-1 p-2 text-gray-500 hover:text-gray-700 transition-transform transform hover:scale-110"
+                >
+                    <X className="w-6 h-6" />
+                </Link>
+
                 <div className="bg-white shadow-lg rounded-lg px-8 pt-8 pb-8 mb-4 border border-gray-200">
                     <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8 animate__animated animate__fadeIn">
                         Đăng nhập
@@ -126,7 +133,7 @@ export default function LoginPage() {
                     </div>
                     <p className="mt-6 text-center text-sm text-gray-600">
                         Chưa có tài khoản?{' '}
-                        <Link href="/signup" className="font-medium text-blue-600 hover:underline">
+                        <Link href="/register" className="font-medium text-blue-600 hover:underline">
                             Đăng ký
                         </Link>
                     </p>

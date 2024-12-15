@@ -1,20 +1,28 @@
 "use client";
 
+import React, { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { Header } from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import Banner from "@/components/layout/banner/Banner";
 
-export default function ClientOnlyLayout({ children }: { children: React.ReactNode }) {
-    const pathname = usePathname();
-    const isLoginPage = pathname === "/login";
+interface ClientOnlyLayoutProps {
+    children: ReactNode;
+}
 
-    return (
+export default function ClientOnlyLayout({ children }: ClientOnlyLayoutProps) {
+    const pathname = usePathname();
+    const excludedPaths = ["/login", "/register"];
+    const isExcludedPage = excludedPaths.includes(pathname);
+
+    return isExcludedPage ? (
+        <>{children}</>
+    ) : (
         <>
-            {!isLoginPage && <Header />}
-            {!isLoginPage && <Banner />}
+            <Header />
+            <Banner />
             {children}
-            {!isLoginPage && <Footer />}
+            <Footer />
         </>
     );
 }
