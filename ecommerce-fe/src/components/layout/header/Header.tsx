@@ -1,20 +1,21 @@
 'use client'
 
 import Link from "next/link"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { MagnifyingGlassIcon, ShoppingCartIcon, UserIcon, MapPinIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import { Smartphone, Laptop, Headphones, Watch, Clock, Tablet, Monitor, Home, Shirt } from 'lucide-react'
-import { useEffect, useState } from "react"
-import { AddressDialog } from "./address-dialog"
-import { AccessoriesMenu } from "./accessories-menu"
+import {Input} from "@/components/ui/input"
+import {Button} from "@/components/ui/button"
+import {ChevronDownIcon, MagnifyingGlassIcon, MapPinIcon, ShoppingCartIcon, UserIcon} from '@heroicons/react/24/outline'
+import {Clock, Headphones, Home, Laptop, Monitor, Shirt, Smartphone, Tablet, Watch} from 'lucide-react'
+import React, {useEffect, useRef, useState} from "react"
+import {AddressDialog} from "./address-dialog"
+import {AccessoriesMenu} from "./accessories-menu"
 import {API_URLS} from "@/lib/map";
 
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [addressDialogOpen, setAddressDialogOpen] = useState(false);
     const [currentAddress, setCurrentAddress] = useState("Đang xác định vị trí...");
-    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+    const [, setShowAccessoriesMenu] = useState(false);
+    const accessoriesRef = useRef<HTMLLIElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,7 +43,7 @@ export function Header() {
 
             navigator.geolocation.getCurrentPosition(
                 async (position) => {
-                    const { latitude, longitude } = position.coords;
+                    const {latitude, longitude} = position.coords;
 
                     try {
 
@@ -51,7 +52,7 @@ export function Header() {
 
                         if (data.results && data.results.length > 0) {
                             const address = data.results[0].formatted_address || "Không xác định được địa chỉ.";
-                            setCurrentAddress(address); // Cập nhật địa chỉ
+                            setCurrentAddress(address);
                         } else {
                             setCurrentAddress("Không tìm thấy địa chỉ từ GPS.");
                         }
@@ -67,7 +68,20 @@ export function Header() {
             );
         };
 
-        fetchLocation();
+        void fetchLocation();
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (accessoriesRef.current && !accessoriesRef.current.contains(event.target as Node)) {
+                setShowAccessoriesMenu(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
     }, []);
 
     return (
@@ -78,7 +92,8 @@ export function Header() {
             <div className="h-6 bg-[url('/lights.png')] bg-repeat-x"/>
 
             {/* Main header */}
-            <div className="w-full max-w-[1400px] mx-auto px-4 lg:px-10 xl:px-20 flex justify-between items-center py-2">
+            <div
+                className="w-full max-w-[1400px] mx-auto px-4 lg:px-10 xl:px-20 flex justify-between items-center py-2">
                 {/* Logo */}
                 <Link href="/" className="flex-shrink-0">
                     <h1 className="text-4xl font-bold text-white">Xiaomi</h1>
@@ -100,32 +115,35 @@ export function Header() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-2 md:gap-4">
-                    <Button
-                        variant="ghost"
-                        className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
-                    >
-                        <UserIcon className="mr-2 h-5 w-5" />
-                        <span className="hidden sm:inline">Đăng nhập</span>
-                    </Button>
+                    <Link href="/login">
+                        <Button
+                            variant="ghost"
+                            className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
+                        >
+                            <UserIcon className="mr-2 h-5 w-5"/>
+                            <span className="hidden sm:inline">Đăng nhập</span>
+                        </Button>
+                    </Link>
 
-                    <Button
-                        variant="ghost"
-                        className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
-                    >
-                        <ShoppingCartIcon className="mr-2 h-5 w-5" />
-                        <span className="hidden sm:inline">Giỏ hàng</span>
-                    </Button>
+                    <Link href="/cart">
+                        <Button
+                            variant="ghost"
+                            className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
+                        >
+                            <ShoppingCartIcon className="mr-2 h-5 w-5"/>
+                            <span className="hidden sm:inline">Giỏ hàng</span>
+                        </Button>
+                    </Link>
 
                     <Button
                         variant="ghost"
                         className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
                         onClick={() => setAddressDialogOpen(true)}
                     >
-                        <MapPinIcon className="mr-2 h-5 w-5" />
+                        <MapPinIcon className="mr-2 h-5 w-5"/>
                         <span className="hidden sm:inline">{currentAddress}</span>
-                        <ChevronDownIcon className="ml-1 h-5 w-5" />
+                        <ChevronDownIcon className="ml-1 h-5 w-5"/>
                     </Button>
-
                 </div>
             </div>
 
@@ -133,23 +151,20 @@ export function Header() {
             <nav className="w-full overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
                 <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-10 xl:px-20">
                     <ul className="flex items-center gap-0.5 text-sm py-1 w-max min-w-full">
-                        <NavItem icon={<Smartphone className="h-5 w-5" />} label="Điện thoại" />
-                        <NavItem icon={<Laptop className="h-5 w-5" />} label="Laptop" />
+                        <NavItem icon={<Smartphone className="h-5 w-5"/>} label="Điện thoại"/>
+                        <NavItem icon={<Laptop className="h-5 w-5"/>} label="Laptop"/>
                         <NavItem
-                            icon={<Headphones className="h-5 w-5" />}
+                            icon={<Headphones className="h-5 w-5"/>}
                             label="Phụ kiện"
                             showChevron
                             showAccessories
-                            onHover={() => setHoveredItem('accessories')}
-                            onLeave={() => setHoveredItem(null)}
-                            isHovered={hoveredItem === 'accessories'}
                         />
-                        <NavItem icon={<Watch className="h-5 w-5" />} label="Smartwatch" />
-                        <NavItem icon={<Clock className="h-5 w-5" />} label="Đồng hồ" />
-                        <NavItem icon={<Tablet className="h-5 w-5" />} label="Tablet" />
-                        <NavItem icon={<Monitor className="h-5 w-5" />} label="PC, Máy chiếu" showChevron />
-                        <NavItem icon={<Home className="h-5 w-5" />} label="Nhà thông minh" showChevron />
-                        <NavItem icon={<Shirt className="h-5 w-5" />} label="Thể thao, thời trang" showChevron />
+                        <NavItem icon={<Watch className="h-5 w-5"/>} label="Smartwatch"/>
+                        <NavItem icon={<Clock className="h-5 w-5"/>} label="Đồng hồ"/>
+                        <NavItem icon={<Tablet className="h-5 w-5"/>} label="Tablet"/>
+                        <NavItem icon={<Monitor className="h-5 w-5"/>} label="PC, Máy chiếu" showChevron/>
+                        <NavItem icon={<Home className="h-5 w-5"/>} label="Nhà thông minh" showChevron/>
+                        <NavItem icon={<Shirt className="h-5 w-5"/>} label="Thể thao, thời trang" showChevron/>
                     </ul>
                 </div>
             </nav>
@@ -171,15 +186,39 @@ interface NavItemProps {
     showAccessories?: boolean
     onHover?: () => void
     onLeave?: () => void
-    isHovered?: boolean
 }
 
-function NavItem({ icon, label, showChevron, showAccessories, onHover, onLeave, isHovered }: NavItemProps) {
+function NavItem({icon, label, showChevron, showAccessories, onHover, onLeave}: NavItemProps) {
+
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+    const handleMouseEnter = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        onHover && onHover();
+        setIsMenuVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        timeoutRef.current = setTimeout(() => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            onLeave && onLeave();
+            setIsMenuVisible(false);
+        }, 100);
+    };
+
     return (
         <li
-            className="flex-grow relative"
-            onMouseEnter={onHover}
-            onMouseLeave={onLeave}
+            className="flex-grow relative group"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{position: 'static'}}
         >
             <Button
                 variant="ghost"
@@ -187,12 +226,16 @@ function NavItem({ icon, label, showChevron, showAccessories, onHover, onLeave, 
             >
                 {icon}
                 <span className="ml-2">{label}</span>
-                {showChevron && <ChevronDownIcon className="ml-1 h-5 w-5 text-white" />}
+                {showChevron && <ChevronDownIcon className="ml-1 h-5 w-5 text-white"/>}
             </Button>
-            {showAccessories && isHovered && (
-                <div className="absolute left-0 w-screen overflow-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent" style={{ top: '100%' }}>
-                    <div className="relative">
-                        <AccessoriesMenu />
+
+            {showAccessories && isMenuVisible && (
+                <div
+                    className="absolute left-0 w-screen bg-white shadow-lg z-50"
+                    style={{top: '100%'}}
+                >
+                    <div className="relative max-w-[1400px] mx-auto">
+                        <AccessoriesMenu/>
                     </div>
                 </div>
             )}
