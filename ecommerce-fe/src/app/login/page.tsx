@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Facebook, Chrome } from 'lucide-react'
+import { X } from 'lucide-react'
 
 export default function LoginPage() {
     const [phone, setPhone] = useState('')
@@ -26,15 +25,23 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center p-4">
-            <div className="w-full max-w-md">
+        <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-r from-blue-500 to-teal-500 animate-gradientBackground">
+            <div className="w-full max-w-md relative">
+
+                <Link
+                    href="/"
+                    className="absolute top-1 right-1 p-2 text-gray-500 hover:text-gray-700 transition-transform transform hover:scale-110"
+                >
+                    <X className="w-6 h-6" />
+                </Link>
+
                 <div className="bg-white shadow-lg rounded-lg px-8 pt-8 pb-8 mb-4 border border-gray-200">
-                    <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
+                    <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8 animate__animated animate__fadeIn">
                         Đăng nhập
                     </h2>
                     <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-                        <div>
-                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                        <div className="relative">
+                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 animate__animated animate__fadeIn">
                                 Số điện thoại
                             </label>
                             <input
@@ -42,13 +49,13 @@ export default function LoginPage() {
                                 name="phone"
                                 type="tel"
                                 required
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-500 transform hover:scale-105"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                        <div className="relative">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 animate__animated animate__fadeIn">
                                 Mật khẩu
                             </label>
                             <input
@@ -56,7 +63,7 @@ export default function LoginPage() {
                                 name="password"
                                 type="password"
                                 required
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-500 transform hover:scale-105"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
@@ -69,7 +76,7 @@ export default function LoginPage() {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300 ease-in-out"
+                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300 ease-in-out transform hover:scale-105"
                             >
                                 Đăng nhập
                             </button>
@@ -87,7 +94,7 @@ export default function LoginPage() {
                         <div className="mt-6 grid grid-cols-2 gap-3">
                             <button
                                 onClick={handleGoogleLogin}
-                                className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-300 ease-in-out"
+                                className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-300 ease-in-out transform hover:scale-105"
                             >
                                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                                     <path
@@ -112,7 +119,7 @@ export default function LoginPage() {
                             </button>
                             <button
                                 onClick={handleFacebookLogin}
-                                className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-300 ease-in-out"
+                                className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-300 ease-in-out transform hover:scale-105"
                             >
                                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                                     <path
@@ -126,7 +133,7 @@ export default function LoginPage() {
                     </div>
                     <p className="mt-6 text-center text-sm text-gray-600">
                         Chưa có tài khoản?{' '}
-                        <Link href="/signup" className="font-medium text-blue-600 hover:underline">
+                        <Link href="/register" className="font-medium text-blue-600 hover:underline">
                             Đăng ký
                         </Link>
                     </p>
@@ -135,4 +142,3 @@ export default function LoginPage() {
         </div>
     )
 }
-

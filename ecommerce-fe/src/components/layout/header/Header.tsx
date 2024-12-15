@@ -115,21 +115,25 @@ export function Header() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-2 md:gap-4">
-                    <Button
-                        variant="ghost"
-                        className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
-                    >
-                        <UserIcon className="mr-2 h-5 w-5"/>
-                        <span className="hidden sm:inline">Đăng nhập</span>
-                    </Button>
+                    <Link href="/login">
+                        <Button
+                            variant="ghost"
+                            className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
+                        >
+                            <UserIcon className="mr-2 h-5 w-5"/>
+                            <span className="hidden sm:inline">Đăng nhập</span>
+                        </Button>
+                    </Link>
 
-                    <Button
-                        variant="ghost"
-                        className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
-                    >
-                        <ShoppingCartIcon className="mr-2 h-5 w-5"/>
-                        <span className="hidden sm:inline">Giỏ hàng</span>
-                    </Button>
+                    <Link href="/cart">
+                        <Button
+                            variant="ghost"
+                            className="h-12 text-white hover:bg-[#f0932b] text-sm whitespace-nowrap"
+                        >
+                            <ShoppingCartIcon className="mr-2 h-5 w-5"/>
+                            <span className="hidden sm:inline">Giỏ hàng</span>
+                        </Button>
+                    </Link>
 
                     <Button
                         variant="ghost"
@@ -140,7 +144,6 @@ export function Header() {
                         <span className="hidden sm:inline">{currentAddress}</span>
                         <ChevronDownIcon className="ml-1 h-5 w-5"/>
                     </Button>
-
                 </div>
             </div>
 
