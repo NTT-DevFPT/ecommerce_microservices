@@ -13,6 +13,8 @@ interface ClientOnlyLayoutProps {
 export default function ClientOnlyLayout({ children }: ClientOnlyLayoutProps) {
     const pathname = usePathname();
     const excludedPaths = ["/login", "/register"];
+    const excludedPatterns = [/^\/[^/]+\/[^/]+$/];
+
     const isExcludedPage = excludedPaths.includes(pathname);
 
     return isExcludedPage ? (
@@ -20,7 +22,7 @@ export default function ClientOnlyLayout({ children }: ClientOnlyLayoutProps) {
     ) : (
         <>
             <Header />
-            <Banner />
+            {!excludedPatterns.some(pattern => pattern.test(pathname)) && <Banner />}
             {children}
             <Footer />
         </>
