@@ -88,30 +88,24 @@ export default function Home() {
     return (
         <div className="bg-[#222] text-white min-h-screen">
             <div className="container mx-auto px-4 py-8 relative">
-                {/* Header */}
-                <div className="flex justify-center mb-8">
-                    <div className="text-4xl font-bold px-6 py-2 rounded-lg shadow-lg bg-[#1e272e]">
-                        Xiaomi Products
-                    </div>
-                </div>
 
-                <h2 className="text-2xl text-center mb-4 font-bold">Phone</h2>
+                <h2 className="text-4xl text-center mb-4 font-bold">Điện thoại</h2>
                 {renderProductCarousel(phone)}
 
-                <h2 className="text-2xl text-center mb-4 font-bold">Laptop</h2>
+                <h2 className="text-4xl text-center mb-4 font-bold">Máy tính</h2>
                 {renderProductCarousel(laptop)}
 
-                <h2 className="text-2xl text-center mb-4 font-bold">Accessories</h2>
-                {renderProductCarousel(accessories)}
-
-                <h2 className="text-2xl text-center mb-4 font-bold">Smartwatch</h2>
+                <h2 className="text-4xl text-center mb-4 font-bold">Đồng hồ thông minh</h2>
                 {renderProductCarousel(smartwatch)}
 
-                <h2 className="text-2xl text-center mb-4 font-bold">Tablet</h2>
+                <h2 className="text-4xl text-center mb-4 font-bold">Máy tính bảng</h2>
                 {renderProductCarousel(tablet)}
 
-                <h2 className="text-2xl text-center mb-4 font-bold">Smart Home</h2>
+                <h2 className="text-4xl text-center mb-4 font-bold">Nhà thông minh</h2>
                 {renderProductCarousel(smartHome)}
+
+                <h2 className="text-4xl text-center mb-4 font-bold">Phụ kiện</h2>
+                {renderProductCarousel(accessories)}
             </div>
         </div>
     );
