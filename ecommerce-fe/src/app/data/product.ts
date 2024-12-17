@@ -7,7 +7,7 @@ export const phone: Product[] = [
         price: "15.460.000₫",
         oldPrice: "16.990.000₫",
         discount: "-9%",
-        image: "/image/product/phone/xiaomi-14t-pro.jpg",
+        image: "/image/product/phone/xiaomi-14t.png",
         category: "phone",
         slug: "xiaomi-14t-pro-5g",
         thumbnails: "/image/product/phone/xiaomi-14t-pro-thumbs.jpg"
@@ -23,6 +23,28 @@ export const phone: Product[] = [
         slug: "xiaomi-14t-5g",
         thumbnails: "/image/product/phone/xiaomi-14t-thumbs.jpg"
     },
+    {
+        id: 3,
+        name: "Xiaomi 14T Lite 5G",
+        price: "8.990.000₫",
+        oldPrice: "9.990.000₫",
+        discount: "-10%",
+        image: "/image/product/phone/xiaomi-redmi-a3.jpg",
+        category: "phone",
+        slug: "xiaomi-14t-lite-5g",
+        thumbnails: "/image/product/phone/xiaomi-14t-lite-thumbs.jpg"
+    },
+    {
+        id: 4,
+        name: "Xiaomi 14T Lite 4G",
+        price: "7.990.000₫",
+        oldPrice: "8.990.000₫",
+        discount: "-11%",
+        image: "/image/product/phone/xiaomi-14t-lite-4g.jpg",
+        category: "phone",
+        slug: "xiaomi-14t-lite-4g",
+        thumbnails: "/image/product/phone/xiaomi-14t-lite-4g-thumbs.jpg"
+    }
     // thêm sản phẩm khác...
 ];
 

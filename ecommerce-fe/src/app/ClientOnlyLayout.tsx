@@ -12,10 +12,13 @@ interface ClientOnlyLayoutProps {
 
 export default function ClientOnlyLayout({ children }: ClientOnlyLayoutProps) {
     const pathname = usePathname();
-    const excludedPaths = ["/login", "/register"];
+
+    const excludedPaths = new Set(["/login", "/register"]);
+    const isExcludedPage = excludedPaths.has(pathname);
+
     const excludedPatterns = [/^\/[^/]+\/[^/]+$/];
 
-    const isExcludedPage = excludedPaths.includes(pathname);
+    // const dynamicPattern = /^\/products\/\d+$/; // Ví dụ: /products/123
 
     return isExcludedPage ? (
         <>{children}</>

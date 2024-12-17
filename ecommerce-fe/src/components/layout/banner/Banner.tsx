@@ -1,10 +1,11 @@
 'use client'
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import {ChevronLeft, ChevronRight} from 'lucide-react'
 import {Badge} from "@/components/ui/badge"
-import '/src/components/css/banner.css'
+import {clsx} from "clsx"
 
 interface BannerSlide {
     id: number
@@ -28,7 +29,7 @@ const slides: BannerSlide[] = [
         ctaText: "Mua ngay",
         ctaLink: "#",
         badge: "Advanced AI",
-        theme: "dark"
+        theme: "light"
     },
     {
         id: 2,
@@ -38,7 +39,7 @@ const slides: BannerSlide[] = [
         image: "/image/banner/banner_04.jpg",
         ctaText: "Tìm hiểu thêm",
         ctaLink: "#",
-        theme: "dark"
+        theme: "light"
     },
     {
         id: 3,
@@ -64,8 +65,16 @@ const slides: BannerSlide[] = [
 
 export default function Banner() {
     const [currentSlide, setCurrentSlide] = React.useState(0);
-    const [isHovered, setIsHovered] = React.useState(false); // Trạng thái hover
+    const [isHovered, setIsHovered] = React.useState(false);
     const slide = slides[currentSlide];
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -89,66 +98,110 @@ export default function Banner() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <img src={slide.image} alt={slide.title} className="w-full h-[700px] object-cover"/>
+            <div className="relative w-full h-[600px]">
+                <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="filter brightness-100 contrast-100 saturate-100"
+                    priority
+                />
+                <div className="absolute inset-0 bg-black/10"/>
+            </div>
 
             {/* Content */}
-            <div
-                className={`absolute inset-0 bg-gradient-to-r ${slide.theme === 'light' ? 'from-background/80 to-background/20' : 'from-background/90 to-background/90'}`}>
+            <div className="absolute inset-0">
                 <div className="container relative flex h-full flex-col justify-center space-y-6 px-4 md:px-6">
                     {slide.badge && (
                         <Badge
-                            className="w-fit bg-black text-white px-4 py-1 rounded-full text-sm font-medium ml-[100px]">
+                            className="w-fit bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium ml-[100px]">
                             {slide.badge}
                         </Badge>
                     )}
                     <div className="space-y-4">
                         <h1
-                            className={`text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl 
-                                ${slide.id === 1 || slide.id === 2 ? "text-black" : "text-white"} 
-                                ${slide.id === 3 ? "text-center pl-[210px]" : ""}
-                                ${slide.id === 1 ? "pl-[100px]" : slide.id === 2 ? "pl-[80px]" : "pl-[60px]"}`}
+                            className={clsx(
+                                "text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-lg",
+                                {
+                                    "pl-[530px]": slide.id === 3,
+                                    "pl-[100px]": slide.id === 1,
+                                    "pl-[80px]": slide.id === 2,
+                                    'relative left-[60px]': slide.id === 4,
+                                    "text-black": slide.id === 1 || slide.id === 2,
+                                    "text-white": slide.id === 3 || slide.id === 4,
+                                    "break-words": true,
+                                    "w-full": true,
+                                    "whitespace-normal": true,
+                                    "max-w-[80%]": true,
+                                    "hyphens-auto": true,
+                                    "overflow-wrap": "break-word"
+                                }
+                            )}
                         >
-                            {slide.title}
+                            {slide.title.split(',').map((part, index) => (
+                                <span key={index}>
+                                    {part}
+                                    {index < slide.title.split(',').length - 1 && <br/>}
+                                </span>
+                            ))}
                         </h1>
 
                         <h2
-                            className={`text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl 
-                                ${slide.id === 1 || slide.id === 2 ? "text-black" : "text-white"} 
-                                ${slide.id === 3 ? "text-center pl-[180px] text-2xl" : ""}
-                                ${slide.id === 1 ? "pl-[100px]" : slide.id === 2 ? "pl-[80px]" : "pl-[60px]"}`}
+                            className={clsx(
+                                'text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl drop-shadow-lg',
+                                {
+                                    'text-center pl-[180px] text-2xl': slide.id === 3,
+                                    'pl-[100px]': slide.id === 1,
+                                    'pl-[80px]': slide.id === 2,
+                                    'relative left-[90px]': slide.id === 3,
+                                    'pl-[60px]': slide.id !== 1 && slide.id !== 2,
+                                    "text-black": slide.id === 1 || slide.id === 2,
+                                    "text-white": slide.id === 3 || slide.id === 4
+                                }
+                            )}
                         >
                             {slide.subtitle}
                         </h2>
 
                         <p
-                            className={`w-full max-w-[6000px] md:text-lg whitespace-normal 
-                                ${slide.id === 1 || slide.id === 2 ? "text-black/80" : "text-white/80"} 
-                                ${slide.id === 3 ? "text-center pl-[235px]" : ""}
-                                ${slide.id === 1 ? "pl-[100px]" : slide.id === 2 ? "pl-[80px]" : "pl-[60px]"} 
-                                break-words`}
+                            className={clsx(
+                                'w-full max-w-[600px] md:text-lg whitespace-normal drop-shadow',
+                                {
+                                    'text-center pl-[235px]': slide.id === 3,
+                                    'pl-[100px]': slide.id === 1,
+                                    'pl-[80px]': slide.id === 2,
+                                    'relative left-[400px]': slide.id === 3,
+                                    'pl-[60px]': slide.id !== 1 && slide.id !== 2,
+                                    'break-words': true,
+                                    "text-black": slide.id === 1 || slide.id === 2,
+                                    "text-white": slide.id === 3 || slide.id === 4
+                                }
+                            )}
                         >
                             {slide.description}
                         </p>
-
                     </div>
 
                     <Link
                         href={slide.ctaLink}
-                        className={`inline-flex h-12 items-center justify-center rounded-lg px-10 w-fit text-lg font-medium transition-color 
-                            ${slide.id === 1 || slide.id === 2 ? "bg-black text-white hover:bg-black/90" : "bg-white text-black hover:bg-white/90"}
-                            ${slide.id === 1 ? "ml-[400px] relative top-[3vh]" : ""}
-                            ${slide.id === 2 ? "ml-[80px] relative top-[3vh]" : ""}
-                            ${slide.id === 3 ? "ml-[740px] relative top-[10vh]" : ""}
-                            ${slide.id === 4 ? "ml-[60px] relative top-[4vh]" : ""}
-                        `}
+                        className={clsx(
+                            "inline-flex h-12 items-center justify-center rounded-lg px-10 w-fit text-lg font-medium transition-colors shadow-lg",
+                            "bg-primary text-primary-foreground hover:bg-primary/90",
+                            {
+                                "ml-[380px] relative top-[3vh]": slide.id === 1,
+                                "ml-[80px] relative top-[3vh]": slide.id === 2,
+                                "ml-[640px] relative top-[10vh]": slide.id === 3,
+                                "ml-[60px] relative top-[4vh]": slide.id === 4,
+                            }
+                        )}
                     >
                         {slide.ctaText}
                     </Link>
-
                 </div>
             </div>
 
-            {/* Button điều hướng trái/phải */}
+            {/* Navigation buttons */}
             <div
                 className={`absolute top-1/2 left-0 right-0 flex justify-between px-6 transform -translate-y-1/2 z-10 transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}
             >
@@ -167,17 +220,19 @@ export default function Banner() {
                 </button>
             </div>
 
-            {/* Indicator */}
+            {/* Indicators */}
             <div
                 className="container absolute bottom-4 left-1/2 flex -translate-x-1/2 justify-center gap-2 px-4 md:px-6">
                 {slides.map((_, index) => (
                     <button
                         key={index}
-                        className={`h-2 transition-all duration-300 ${index === currentSlide ? "w-12 bg-white" : "w-4 bg-white/50"}`}
+                        className={`h-0.5 w-20 transition-all duration-300 ${index === currentSlide ? "bg-orange-500" : "bg-white/50"}`}
                         onClick={() => setCurrentSlide(index)}
+                        style={{transition: "width 0.5s ease-in-out"}}
                     />
                 ))}
             </div>
+
         </div>
     );
 }

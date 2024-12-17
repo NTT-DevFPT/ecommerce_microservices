@@ -47,28 +47,49 @@ export default function Home() {
                             passHref>
                             <div
                                 className="min-w-1/4 p-4 cursor-pointer"
-                                style={{ flex: "0 0 25%" }}
+                                style={{
+                                    flex: "0 0 25%",
+                                    width: "310px",
+                                    height: "500px",
+                                }}
                             >
-                                <div className="bg-[#333333] p-4 rounded-lg text-center shadow-lg hover:scale-105 transition-transform duration-300">
+                                <div
+                                    className="bg-[#333333] p-4 rounded-lg text-center shadow-lg hover:scale-105 transition-transform duration-300"
+                                    style={{
+                                        height: "100%",
+                                    }}
+                                >
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         className="w-full h-80 object-cover mb-4 rounded-lg"
+                                        style={{
+                                            height: "300px",
+                                        }}
                                     />
-                                    <h2 className="text-lg font-bold mb-2">{product.name}</h2>
-                                    <div className="flex justify-center items-center gap-2 mb-2">
-                                    <span className="text-white text-xl font-semibold">
-                                        {product.price}
-                                    </span>
-                                        <span className="line-through text-gray-400 text-sm">
-                                        {product.oldPrice}
-                                    </span>
-                                        <span className="text-red-500 font-bold">
-                                        {product.discount}
-                                    </span>
-                                    </div>
-                                    <div className="text-orange-400 font-medium">
-                                        Online giá rẻ quá
+
+                                    <h2
+                                        className="font-bold mb-2 flex items-center justify-center"
+                                        style={{
+                                            fontSize: "16px",
+                                            lineHeight: "1.2",
+                                            height: "48px",
+                                            overflow: "hidden",
+                                            textOverflow: "ellipsis",
+                                        }}
+                                    >
+                                        {product.name}
+                                    </h2>
+
+                                    <div>
+                                        <div className="flex justify-center items-center gap-2 mb-2">
+                                            <span className="text-white text-xl font-semibold">{product.price}</span>
+                                            <span
+                                                className="line-through text-gray-400 text-sm">{product.oldPrice}</span>
+                                            <span className="text-red-500 font-bold">{product.discount}</span>
+                                        </div>
+
+                                        <div className="text-orange-400 font-medium">Online giá rẻ quá</div>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +110,7 @@ export default function Home() {
         <div className="bg-[#222] text-white min-h-screen">
             <div className="container mx-auto px-4 py-8 relative">
 
-                <h2 className="text-4xl text-center mb-4 font-bold">Điện thoại</h2>
+            <h2 className="text-4xl text-center mb-4 font-bold">Điện thoại</h2>
                 {renderProductCarousel(phone)}
 
                 <h2 className="text-4xl text-center mb-4 font-bold">Máy tính</h2>
