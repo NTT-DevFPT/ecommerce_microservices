@@ -18,8 +18,6 @@ export default function ClientOnlyLayout({ children }: ClientOnlyLayoutProps) {
 
     const excludedPatterns = [/^\/[^/]+\/[^/]+$/];
 
-    // const dynamicPattern = /^\/products\/\d+$/; // Ví dụ: /products/123
-
     return isExcludedPage ? (
         <>{children}</>
     ) : (

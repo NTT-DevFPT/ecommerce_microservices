@@ -151,14 +151,26 @@ export function Header() {
             <nav className="w-full overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
                 <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-10 xl:px-20">
                     <ul className="flex items-center gap-0.5 text-sm py-1 w-max min-w-full">
-                        <NavItem icon={<Smartphone className="h-5 w-5"/>} label="Điện thoại"/>
-                        <NavItem icon={<Laptop className="h-5 w-5"/>} label="Laptop"/>
+
+                        <Link href="/phone">
+                            <NavItem
+                                icon={<Smartphone className="h-5 w-5"/>}
+                                label="Điện thoại"
+                            />
+                        </Link>
+
+                        <NavItem
+                            icon={<Laptop className="h-5 w-5"/>}
+                            label="Laptop"
+                        />
+
                         <NavItem
                             icon={<Headphones className="h-5 w-5"/>}
                             label="Phụ kiện"
                             showChevron
                             showAccessories
                         />
+
                         <NavItem icon={<Watch className="h-5 w-5"/>} label="Smartwatch"/>
                         <NavItem icon={<Clock className="h-5 w-5"/>} label="Đồng hồ"/>
                         <NavItem icon={<Tablet className="h-5 w-5"/>} label="Tablet"/>
@@ -242,4 +254,3 @@ function NavItem({icon, label, showChevron, showAccessories, onHover, onLeave}: 
         </li>
     );
 }
-
